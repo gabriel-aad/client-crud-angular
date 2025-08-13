@@ -1,0 +1,21 @@
+.spacer {
+    flex: 1 1 auto;
+}
+
+mat-toolbar {
+    align-items: center;
+}
+
+mat-toolbar a {
+    padding: 5px 10px;
+    margin-left: 10px;
+    text-decoration: none;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+mat-toolbar a:hover {
+    background-color: #00000030;
+}

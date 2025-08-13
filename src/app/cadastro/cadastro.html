@@ -1,0 +1,131 @@
+<div fxLayout="row" fxLayoutAlign="center">
+    <div fxLayout="column" fxFlex="1000px">
+        <form class="mt-60" #clientesForm="ngForm" (ngSubmit)="salvarCliente()">
+            <mat-card>
+                <!-- Cabeçalho do Card -->
+                <mat-card-header>
+                    <mat-card-title>Dados Pessoais</mat-card-title>
+                </mat-card-header>
+                
+                <!-- Conteúdo do Card -->
+                <mat-card-content class="mt-20">
+                    <!-- Nome -->
+                    <div fxLayout="row" fxLayoutAlign="start" fxLayoutGap="16px">
+                        <!-- Definindo a largura do campo -->
+                        <div fxFlex="800px">
+                            <!-- Define a largura do input como 100% -->
+                            <mat-form-field class="full-width">
+                                <mat-label>Nome: </mat-label>
+                                <input type="text"
+                                [(ngModel)]="cliente.nome" 
+                                name="nome"
+                                required
+                                placeholder="Digite seu nome completo" 
+                                matInput>
+                            </mat-form-field>
+                        </div>
+                    </div>
+                    
+                    <!-- E-mail -->
+                    <div fxLayout="row" fxLayoutAlign="start" fxLayoutGap="16px">
+                        <div fxFlex="800px">
+                            <mat-form-field class="full-width">
+                                <mat-label>E-mail: </mat-label>
+                                <input type="email" 
+                                [(ngModel)]="cliente.email"
+                                name="email"
+                                required
+                                placeholder="Digite seu e-mail" matInput>
+                            </mat-form-field>
+                        </div>
+                    </div>
+                    
+                    <!-- CPF -->
+                    <div fxLayout="row" fxLayoutAlign="start" fxLayoutGap="16px">
+                        <div fxFlex="400px">
+                            <mat-form-field class="full-width">
+                                <mat-label>CPF: </mat-label>
+                                <input type="text" 
+                                [(ngModel)]="cliente.cpf" 
+                                name="cpf"
+                                mask="000.000.000-00"
+                                placeholder="000.000.000-00" 
+                                required
+                                matInput>
+                            </mat-form-field>
+                        </div>
+                    </div>
+                    
+                    <!-- Data de nascimento -->
+                    <div fxLayout="row" fxLayoutAlign="start" fxLayoutGap="16px">
+                        <div fxFlex="400px">
+                            <mat-form-field class="full-width">
+                                <mat-label>Data de nascimento: </mat-label>
+                                <input type="date"
+                                [(ngModel)]="cliente.dataNascimento" 
+                                name="dataNascimento"
+                                required
+                                placeholder="Digite sua data de nascimento"
+                                matInput>
+                            </mat-form-field>
+                        </div>
+                    </div>
+                    
+                    <!-- Unidade Federativa -->
+                    <div fxLayout="row" fxLayoutAlign="start" fxLayoutGap="16px">
+                        <div fxLayout="column" fxFlex="400px">
+                            <mat-form-field class="full-width">
+                                <mat-label>UF:</mat-label>
+                                <mat-select 
+                                [(value)]="cliente.uf" 
+                                required
+                                (selectionChange)="carregarMunicipios($event)">
+                                <mat-option *ngFor="let uf of estados" [value]="uf.sigla">
+                                    {{ uf.sigla }}
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+                </div>
+                
+                <!-- Município -->                
+                <div fxLayout="row" fxLayoutAlign="start" fxLayoutGap="16px">
+                    <div fxLayout="column" fxFlex="400px">
+                        <mat-form-field class="full-width">
+                            <mat-label>Municipio:</mat-label>
+                            <mat-select 
+                            [(value)]="cliente.municipio"
+                            required>
+                            <mat-option *ngFor="let m of municipios" [value]="m.nome">
+                                {{ m.nome }}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                
+            </div>
+        </mat-card-content>
+        
+        <!-- Ações do Card -->
+        <mat-card-actions>
+            @if(!atualizandoCliente){
+                <button mat-flat-button color="primary" type="submit">
+                    <mat-icon fontIcon="save"></mat-icon>
+                    Salvar
+                </button>
+            } @else { 
+                <button mat-flat-button color="primary">
+                    <mat-icon fontIcon="refresh"></mat-icon>
+                    Atualizar
+                </button>
+            }
+            
+            <button type="reset" mat-flat-button color="accent" class="ml-10 mb-10">
+                <mat-icon fontIcon="backspace"></mat-icon>
+                Limpar
+            </button>
+        </mat-card-actions>
+    </mat-card>
+</form>
+</div>
+</div>
