@@ -1,59 +1,50 @@
-# CRUD de clientes em Angular com consumo de API
+# Client-CRUD-Angular
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.0.1.
+Exercício de aplicação em Angular para realizar operações básicas de **CRUD** (Create, Read, Update, Delete), integrando:
 
-## Development server
+- Máscaras personalizadas nos inputs;
+- Consumo de API externa para preenchimento automático de endereços;
+- Estilização com **Angular Material**.
 
-To start a local development server, run:
+---
+
+##  Tecnologias utilizadas
+
+- **Angular** (versão 20)
+- **Angular Material** 
+- **ngx-mask** (versão 20.0.3)
+- API externa ([Brasil API](https://brasilapi.com.br/))
+
+---
+
+## Funcionalidades
+
+1. **Listagem de clientes**:
+   - Exibição dos registros existentes em uma tabela estilizada com Angular Material.
+2. **Criação de cliente**:
+   - Formulário com validação;
+   - Aplicação de máscara para formatação automática.
+3. **Edição de cliente**:
+   - Reutilização do formulário com dados pré-carregados;
+   - Atualização e persistência via local storage do browser.
+4. **Exclusão de cliente**.
+5. **Endereço direcionado**:
+   - Aquisição de cidades conforme a UF informada pelo usuário.
+
+---
+
+## Instalação
+
+### Pré-requisitos
+
+- Angular CLI (versão 20.0.1)
+- Acesso à internet para chamadas à API de CEP
+
+### Passos
 
 ```bash
+git clone https://github.com/gabriel-aad/client-crud-angular.git
+cd client-crud-angular
+npm install
 ng serve
 ```
-
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
