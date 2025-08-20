@@ -1,4 +1,4 @@
-# Client-CRUD-Angular
+# CRUD de clientes em Angular
 
 Exercício de aplicação em Angular para realizar operações básicas de **CRUD** (Create, Read, Update, Delete), integrando:
 
