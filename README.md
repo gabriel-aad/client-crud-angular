@@ -42,9 +42,18 @@ Exercício de aplicação em Angular para realizar operações básicas de **CRU
 
 ### Passos
 
+1. **Clone o projeto:** 
 ```bash
 git clone https://github.com/gabriel-aad/client-crud-angular.git
+```
+
+2. **Navegue até a pasta e instale as dependências:** 
+```bash
 cd client-crud-angular
 npm install
+```
+
+3. **Execute:**
+```bash
 ng serve
 ```
