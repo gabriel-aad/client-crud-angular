@@ -13,7 +13,7 @@ Exercício de aplicação em Angular para realizar operações básicas de **CRU
 - **Angular** (versão 20)
 - **Angular Material** 
 - **ngx-mask** (versão 20.0.3)
-- API externa ([Brasil API](https://brasilapi.com.br/))
+- APIs externas ([Brasil API](https://brasilapi.com.br/) e [ViaCEP](https://viacep.com.br/))
 
 ---
 
@@ -26,7 +26,7 @@ Exercício de aplicação em Angular para realizar operações básicas de **CRU
    - Aplicação de máscara para formatação automática.
 3. **Edição de cliente**:
    - Reutilização do formulário com dados pré-carregados;
-   - Atualização e persistência via local storage do browser.
+   - Atualização e persistência via localStorage do browser.
 4. **Exclusão de cliente**.
 5. **Endereço direcionado**:
    - Aquisição de cidades conforme a UF informada pelo usuário.
